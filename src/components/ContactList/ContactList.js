@@ -16,16 +16,19 @@ function ContactList() {
   
 
      return (
-    <ul className={css.list} >
-      {contacts.map(({ id, name, phone }) => (
+       <ul className={css.list} >
+         
+      {contacts.map(({ id, name, number }) => (
         <li className={css.item} key={id}>
           <p >
-            {name}: {phone}
+            {name}: {number}
           </p>
           
-          <button className={css.button_delete} type="button" onClick={() => dispatch(deleteContactThunk(id))}>
+          <button className={css.button_delete} type="button"
+            onClick={() => dispatch(deleteContactThunk(id))}>
                 Delete
-              </button>
+          </button>
+           
         </li>
       ))}
     </ul>
