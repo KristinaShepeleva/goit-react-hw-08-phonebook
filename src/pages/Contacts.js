@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-//import { Helmet } from 'react-helmet';
 
 import Container from 'components/Container/Container';
 import ContactForm from 'components/ContactForm/ContactForm';
