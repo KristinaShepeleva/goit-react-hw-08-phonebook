@@ -11,7 +11,6 @@ export const LoginForm = () => {
       email: e.target.elements.email.value,
       password: e.target.elements.password.value,
     };
-    //const form = e.currentTarget;
     dispatch(
       logIn(user)
     );

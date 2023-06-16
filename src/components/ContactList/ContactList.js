@@ -14,7 +14,7 @@ function ContactList() {
       item.name.toLowerCase().trim().includes(filter.toLowerCase().trim())
     ).sort((first, second) => first.name.localeCompare(second.name));
   
-
+  
      return (
        <ul className={css.list} >
          

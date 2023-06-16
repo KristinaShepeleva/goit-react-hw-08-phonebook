@@ -1,7 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
-// import { addContact, deleteContact, getContacts } from '../../../servise/serviseApi';
-
 
 // GET @ /contacts
 export const fetchContacts = createAsyncThunk(
@@ -35,9 +33,9 @@ export const addContactThunk = createAsyncThunk(
 // DELETE @ /contacts/:id
 export const deleteContactThunk = createAsyncThunk(
   "contacts/deleteContact",
-  async (id, thunkAPI) => {
+  async (contactId, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${id}`);
+      const response = await axios.delete(`/contacts/${contactId}`);
       console.log(response);
       return response.data;
     } catch (e) {
@@ -45,4 +43,6 @@ export const deleteContactThunk = createAsyncThunk(
     }
   }
 );
+
+
 
