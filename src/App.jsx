@@ -9,8 +9,8 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors/selectors';
-import { fetchContacts } from 'redux/operation/operation';
+import { selectContacts, selectError, selectIsLoading } from 'redux/contacts/selectors/selectors';
+import { fetchContacts } from 'redux/contacts/operation/operation';
 
 
 const App = () => {

@@ -1,28 +1,31 @@
+import { configureStore } from '@reduxjs/toolkit';
 import {
-  //persistStore, persistReducer, 
+  persistStore, persistReducer, 
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER, } from 'redux-persist';
-//import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 
-import { configureStore } from "@reduxjs/toolkit";
-import { contactReducer } from "./phoneSlise";
-import { filterReducer } from "./filterSlise";
+import { contactReducer } from "./contacts/phoneSlise";
+import { filterReducer } from "./contacts/filterSlise";
+import { authReducer } from './auth/authSlise';
 
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
-// const persistConfig = {
-//   key: 'contacts',
-//   storage,
-// }
-// const persistedReducer = persistReducer(persistConfig, contactReducer);
+const persistedReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
     contacts: contactReducer,
-     filter: filterReducer,
+    filter: filterReducer,
+     auth: persistedReducer,
     }, 
      middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -32,6 +35,5 @@ export const store = configureStore({
     }),
 });
 
-//export const persistor = persistStore(store);
-
+export const persistor = persistStore(store);
 

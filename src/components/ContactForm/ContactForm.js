@@ -3,8 +3,8 @@ import css from './ContactForm.module.css';
 
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContactThunk } from '../../redux/operation/operation';
-import { selectContacts } from 'redux/selectors/selectors';
+import { addContactThunk } from '../../redux/contacts/operation/operation';
+import { selectContacts } from 'redux/contacts/selectors/selectors';
 
 
 const ContactForm = () => {
