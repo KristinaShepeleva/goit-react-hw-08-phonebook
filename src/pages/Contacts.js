@@ -1,8 +1,6 @@
-
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
-
-
+//import { Helmet } from 'react-helmet';
 
 import Container from 'components/Container/Container';
 import ContactForm from 'components/ContactForm/ContactForm';
@@ -13,17 +11,17 @@ import { selectContacts, selectError, selectIsLoading } from 'redux/contacts/sel
 import { fetchContacts } from 'redux/contacts/operation/operation';
 
 
-const App = () => {
-   const dispatch = useDispatch();
+export default function Contacts() {
+  const dispatch = useDispatch();
    const contacts = useSelector(selectContacts);
    const isLoading = useSelector(selectIsLoading);
    const error = useSelector(selectError);
 
-    useEffect(() => {
+  useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-       return (
+  return (
       <Container>
         <h1>Phonebook</h1> 
            <ContactForm />
@@ -34,5 +32,3 @@ const App = () => {
     </Container>
   )
 }
-
-export default App;

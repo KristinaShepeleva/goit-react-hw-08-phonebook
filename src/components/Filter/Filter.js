@@ -10,9 +10,7 @@ function Filter() {
 
 const onChangeFilter = e => {
   dispatch(filterContacts(e.target.value));
-  
   };
-
 
   return (
      <label className={css.label} >
